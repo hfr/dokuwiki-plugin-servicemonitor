@@ -1,0 +1,15 @@
+.servicemonitor-status {
+    font-weight: bold;
+}
+
+.servicemonitor-status.status-active {
+    color: green;
+}
+
+.servicemonitor-status.status-inactive {
+    color: red;
+}
+
+.servicemonitor-status.status-unknown {
+    color: #888;
+}

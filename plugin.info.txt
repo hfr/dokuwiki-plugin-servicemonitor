@@ -1,0 +1,7 @@
+base   servicemonitor
+author Rüdiger Kessel
+email  ruediger.kessel@gmail.com
+date   2026-10-29
+name   Plugin to show the status of system services
+desc   The plugin calls a script to access the status of configured services
+url    https://www.dokuwiki.org/plugin:servicemonitor
