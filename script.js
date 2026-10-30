@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    window.updateServiceStatus = function () {
+    window.updateServiceStatus = function (pageId) {
         const elements = document.querySelectorAll(
             '.servicemonitor-status[data-service]'
         );
@@ -12,7 +12,7 @@
         }
 
         const url = DOKU_BASE +
-            'lib/exe/ajax.php?call=plugin_servicemonitor_status';
+            'lib/exe/ajax.php?call=plugin_servicemonitor_status&id='+pageId;
 
         fetch(url, {
             method: 'GET',

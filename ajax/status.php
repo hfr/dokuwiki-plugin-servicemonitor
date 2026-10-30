@@ -10,6 +10,19 @@ global $conf;
 $config = $conf['plugin']['servicemonitor']['services'] ?? '';
 $command = $conf['plugin']['servicemonitor']['command'] ?? '/usr/local/bin/service-status';
 
+$plugin = plugin_load('syntax', 'servicemonitor');
+
+$pageId = $_REQUEST['id'] ?? '';
+
+if (!$plugin->hasAccess($pageId)) {
+    $AJAX_JSON = [
+        'success'  => false,
+        'services' => [],
+        'error' => $plugin->getError($pageId),
+    ];
+    return;
+}
+
 $services = [];
 $params = '';
 
